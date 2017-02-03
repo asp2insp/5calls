@@ -72,6 +72,12 @@
       color: $gray;
       padding: 20px;
     }
+
+    &__header_items {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
   }
 
   &__contact__type, &__contact__reason__header, &__script__header , &__outcomes__header {

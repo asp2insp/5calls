@@ -26,7 +26,10 @@ module.exports = (state, prev, send) => {
     if (currentContact != null) {
       return html`
       <div class="call__script">
-        <h3 class="call__script__header">Your script:</h3>
+        <div class="call__script__header_items">
+          <h3 class="call__script__header">Your script:</h3>
+          <a class="call__script__personalization_cta" href="/#personalize">Personalize your script</a>
+        </div>
         <div class="call__script__body">${script.split('\n').map((line) => scriptLine(line, state, prev, send))}</div>
       </div>`
     } else {

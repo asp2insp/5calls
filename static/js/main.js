@@ -48,7 +48,6 @@ store.getAll('org.5calls.geolocation_city', (city) => {
 cachedPersonalInfo = {};
 store.getAll('org.5calls.personal_info', (info) => {
   if (info) {
-    console.log("personal_info get", info);
     cachedPersonalInfo = info
   }
 });
@@ -254,6 +253,7 @@ app.router({ default: '/404' }, [
   ],
   ['/about', require('./pages/aboutView.js')],
   ['/done', require('./pages/doneView.js')],
+  ['/personalize', require('./pages/personalInfoView.js')],
 ]);
 
 const tree = app.start();
