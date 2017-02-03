@@ -45,6 +45,14 @@ store.getAll('org.5calls.geolocation_city', (city) => {
   }
 });
 
+cachedPersonalInfo = {};
+store.getAll('org.5calls.personal_info', (info) => {
+  if (info) {
+    console.log("personal_info get", info);
+    cachedPersonalInfo = info
+  }
+});
+
 // get the stored completed issues
 completedIssues = [];
 store.getAll('org.5calls.completed', (completed) => {
@@ -73,6 +81,9 @@ app.model({
     askingLocation: false,
     contactIndex: 0,
     completedIssues: completedIssues,
+
+    // Script personalization
+    personalInfo: cachedPersonalInfo,
 
     debug: debug,
   },
